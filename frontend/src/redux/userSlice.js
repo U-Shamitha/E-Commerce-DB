@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-  user: JSON.parse(localStorage.getItem('formData')),
+  user: localStorage.getItem('formData') ? JSON.parse(localStorage.getItem('formData')) : {},
   isLoading: false,
   error: null,
 }
