@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
   isSideBarOpen: false,
-  sortOption: null,
+  sortOption: {value:null},
   productName: '',
   productCategory: '',
   productBrand: '',
