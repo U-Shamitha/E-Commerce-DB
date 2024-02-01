@@ -1,0 +1,88 @@
+.step-container{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+    height: 100%;
+}
+
+.form-container{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    background-color: rgba(235, 234, 234, 0.4);
+    border-radius: 20px;
+}
+
+.form-container .title{
+    font-size: large;
+    font-weight: 502;
+    text-align: center;
+    color: rgb(58, 187, 247);
+    margin: 10px auto;
+}
+
+.form-container .input{
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-container .input{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10px;
+    padding: 10px 0px 10px 15px;
+    height: 50px;
+    border-radius: 8px;
+    background-color: rgb(58, 187, 247);
+    align-items: center;
+}
+
+.form-container .input .fa-icon{
+    color: white;
+    padding-right: 5px;
+    width: 20px;
+}
+
+.form-container input{
+    margin-left: 10px;
+    padding: 10px 15px ;
+    height: 50px;
+    border: none;
+    border-radius: 0px 8px 8px 0px;
+    min-width: 280px;
+}
+
+.form-container input :focus{
+    border-color: rgb(58, 187, 247);;
+    outline-color: rgb(58, 187, 247);
+}
+
+.form-container .error{
+    display: flex;
+    padding-right: 10px;
+    align-self: flex-end;
+    font-size: 12px;
+    align-items: center;
+}
+
+.form-container .btn-container .btn{
+    width: 35%;
+    min-width: fit-content;
+}
+
+.form-btn{
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(58, 187, 247);
+    padding: 15px 20px;
+    font-size: 15px;
+    font-weight: 510;
+    margin: 20px;
+}
+
+.step-container div img{
+    height: 400px;
+}

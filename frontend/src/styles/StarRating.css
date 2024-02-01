@@ -1,0 +1,28 @@
+.star-rating {
+    display: inline-block;
+  }
+  
+  .star {
+    width: 15px;
+    height: 15px;
+    background: url('../../public/star.png') no-repeat;
+    display: inline-block;
+  }
+  
+
+  .full-star {
+    background-position: 0 0;
+    background-size: cover;
+  }
+  
+  .remainder-star {
+    position: relative;
+    height: 15px;
+  }
+  
+  .remainder-star-fill {
+    height: 100%;
+    background: url('../../public/star.png') no-repeat;
+    background-size: cover;
+  }
+  
