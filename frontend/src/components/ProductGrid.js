@@ -8,7 +8,7 @@ import { primaryColor } from '../values/color';
 const ProductGrid = () => {
 
   const [products, setProducts] = useState([]);
-  const [filteredProducts, setFilteredProducts] = useState([]);
+  let filteredProducts = products;
   const { sortOption, productName, productCategory, productBrand, priceRange: selectedPrices, ratingRange: selectedRatingRange, quantity: selectedQuantity }= useSelector((state)=> state.filterOptions);
   const [loading, setLoading] = useState(true);
 
@@ -23,13 +23,13 @@ const ProductGrid = () => {
       .then((response) => response.json())
       .then((data) => {setProducts(data.products); setLoading(false)})
       .catch((error) => console.error('Error fetching products:', error));
+
   }, []);
 
-  useEffect(()=>{
-
+  const handleSortAndFilters = () => {
     console.log("Product Name: ", productName)
-    console.log("Product Category: ", productCategory)
-    console.log("Product Brand: ", productBrand)
+    // console.log("Product Category: ", productCategory)
+    // console.log("Product Brand: ", productBrand)
     
     let newFilteredProducts = products.filter((product)=> product.title.toLowerCase().includes(productName.toLowerCase()));
 
@@ -89,9 +89,10 @@ const ProductGrid = () => {
       );
     }
 
-    setFilteredProducts(newFilteredProducts);
+    filteredProducts = newFilteredProducts;
+  }
    
-  })
+  handleSortAndFilters();
 
   return (
     <div style={{paddingBottom:'20px',marginTop:'0px'}}>
