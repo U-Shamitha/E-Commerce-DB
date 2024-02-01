@@ -84,6 +84,9 @@ const ProductGrid = () => {
           if(typeof a[sortOption.value]  === 'string' &&  typeof b[sortOption.value]  === 'string') {
             return  a[sortOption.value].localeCompare(b[sortOption.value]);
           }
+          else if(sortOption.value==="rating"){
+            return b[sortOption.value] - a[sortOption.value]
+          }
           return a[sortOption.value] - b[sortOption.value]
         }
       );

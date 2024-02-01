@@ -109,7 +109,7 @@ const AddressStep = ({ onNext, onPrev, data, onChange }) => {
     if (!zip.trim()) {
       newErrors.zip = 'ZIP code is required';
       valid = false;
-    } else if (!/^\d{5}$/.test(zip)) {
+    } else if (!/^\d{6}$/.test(zip)) {
       newErrors.zip = 'Invalid ZIP code';
       valid = false;
     }
@@ -229,6 +229,21 @@ const PaymentDetailsStep = ({ onPrev, onSubmit, data, onChange }) => {
     return valid;
   };
 
+  const handleExpirationDateChange = (date) => {
+
+    if (date instanceof Date && !isNaN(date)) {
+      const lastDateOfMonth = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
+      const lastDate = new Date(date.getFullYear(), date.getMonth(), lastDateOfMonth);
+
+      console.log(`Selected date: ${date}`);
+      console.log(`Last date of the selected month: ${lastDate}`);
+
+      onChange('expirationDate', lastDate)
+      onChange('formattedExpirationDate', `${date.getMonth() + 1}/${date.getFullYear()}`)
+    }
+
+  }
+
   const handleSubmit = () => {
     if (validate()) {
       onSubmit();
@@ -258,14 +273,8 @@ const PaymentDetailsStep = ({ onPrev, onSubmit, data, onChange }) => {
           <FontAwesomeIcon icon={faClock} color="white" className='fa-icon'/>
           <div>
             <DatePicker
-              selected={new Date(expirationDate)}
-              onChange={(date) => 
-                {
-                  console.log(`${date.getMonth() + 1}/${date.getFullYear()}`)
-                  onChange('expirationDate', date)
-                  onChange('formattedExpirationDate', `${date.getMonth() + 1}/${date.getFullYear()}`)
-                }
-              }
+              selected={expirationDate ? new Date(expirationDate) : null}
+              onChange={(date) => handleExpirationDateChange(date)}
               dateFormat="MM/yyyy"
               showMonthYearPicker
               placeholderText='Expiration Date'
@@ -320,7 +329,7 @@ const MultiStepForm = () => {
     city: '',
     zip: '',
     cardNumber: '',
-    expirationDate: new Date(),
+    expirationDate: null,
     formattedExpirationDate: '',
     cvv: '',
   });

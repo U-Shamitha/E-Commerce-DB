@@ -30,7 +30,7 @@ const Navbar = ({toggleSidebar}) =>{
                 <Link to="/products">Products</Link>
                 <Link to="/profile">Profile</Link>
             </div>
-            <p>E COMMERCE</p>
+            <Link to="/">E COMMERCE</Link>
         </StyledNav>
     )
 }
