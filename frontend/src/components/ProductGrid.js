@@ -4,6 +4,7 @@ import StarRating from './StarRating';
 import { useDispatch, useSelector } from 'react-redux';
 import { setIsSideBarOpen } from '../redux/filterOptionsSlice';
 import { primaryColor } from '../values/color';
+import { setActiveTab } from '../redux/userSlice';
 
 const ProductGrid = () => {
 
@@ -16,6 +17,7 @@ const ProductGrid = () => {
 
   useEffect(() => {
     //Open side bar
+    dispatch(setActiveTab("product"));
     dispatch(setIsSideBarOpen(true));
 
     // Fetch products 

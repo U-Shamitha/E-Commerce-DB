@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
   user: localStorage.getItem('formData') ? JSON.parse(localStorage.getItem('formData')) : {},
+  activeTab: 'product',
   isLoading: false,
   error: null,
 }
@@ -25,14 +26,18 @@ export const fetchUser = createAsyncThunk(
 )
 
 export const setUser = createAsyncThunk(
-    'user/setUser',
-    async (data) => {
-    
-          return data
-    
-    }
-  )
+  'user/setUser',
+  async (data) => {
+    return data
+  }
+)
 
+export const setActiveTab = createAsyncThunk(
+  'user/setActiveTab',
+  async (data) => {
+    return data
+  }
+)
 
 export const userSlice = createSlice({
   name: 'user',
@@ -52,9 +57,11 @@ export const userSlice = createSlice({
       state.error = action.error.message
     })
     builder.addCase(setUser.fulfilled,(state,action)=>{
-        state.user = action.payload
+        state.user.user = action.payload
     })
-   
+    builder.addCase(setActiveTab.fulfilled,(state,action)=>{
+      state.activeTab = action.payload
+  })
   },
 })
 

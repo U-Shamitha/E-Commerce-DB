@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAddressBook, faBackward, faCheck, faCity, faClock, faCode, faDiagramNext, faDiagramPredecessor, faEllipsisH, faEnvelope, faExclamation, faForward, faIdCard, faLocation, faLock, faPerson, faWarning } from '@fortawesome/free-solid-svg-icons';
 import { useDispatch } from 'react-redux';
 import { setIsSideBarOpen } from '../redux/filterOptionsSlice';
-import { fetchUser } from '../redux/userSlice';
+import { fetchUser, setActiveTab } from '../redux/userSlice';
 
 // Component for Personal Details step
 const PersonalDetailsStep = ({ onNext, data, onChange }) => {
@@ -338,6 +338,7 @@ const MultiStepForm = () => {
   const navigate = useNavigate();
 
   useEffect(()=>{
+    dispatch(setActiveTab("fillDetails"));
     dispatch(setIsSideBarOpen(false));
   },[])
 

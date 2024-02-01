@@ -18,6 +18,7 @@ import {
   faPerson,
 } from '@fortawesome/free-solid-svg-icons';
 import { primaryColor } from '../values/color';
+import { setActiveTab } from '../redux/userSlice';
 
 const Profile = () => {
   const user = useSelector((state) => state.user.user);
@@ -38,6 +39,7 @@ const Profile = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    dispatch(setActiveTab("profile"));
     dispatch(setIsSideBarOpen(false));
   }, []);
 

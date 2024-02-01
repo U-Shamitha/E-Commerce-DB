@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import '../styles/Navbar.css'
+import { useSelector } from 'react-redux';
 
 const StyledNav = styled.nav`
   background-color: ${primaryColor};
@@ -22,15 +23,19 @@ const StyledNav = styled.nav`
 `;
 
 const Navbar = ({toggleSidebar}) =>{
+    
+    const {activeTab} = useSelector((state)=> state.user);
+    console.log("activeTab", activeTab)
+
     return(
         <StyledNav>
-            <div style={{display:'flex', gap:'40px'}}>
-                <FontAwesomeIcon icon={faBars}  onClick={toggleSidebar} size='lg'/>
-                <Link to="/fillDetails">Fill Details</Link>
-                <Link to="/products">Products</Link>
-                <Link to="/profile">Profile</Link>
+            <div style={{display:'flex', gap:'40px', height:'60px', alignItems:'center', margin:'0px'}}>
+                <FontAwesomeIcon icon={faBars}  onClick={toggleSidebar} size='lg' style={{padding:'10px'}}/>
+                <Link to="/fillDetails" className={activeTab==="fillDetails" ? 'activeTab':''}><p className='nav-link-txt'>Fill Details</p></Link>
+                <Link to="/products" className={activeTab==="product" ? 'activeTab':''}><p className='nav-link-txt'>Products</p></Link>
+                <Link to="/profile" className={activeTab==="profile" ? 'activeTab':''}><p className='nav-link-txt'>Profile</p></Link>
             </div>
-            <Link to="/">E COMMERCE</Link>
+            <Link to="/"><p className='nav-link-txt'>E COMMERCE</p></Link>
         </StyledNav>
     )
 }
