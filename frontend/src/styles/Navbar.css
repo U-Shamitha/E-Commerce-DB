@@ -6,12 +6,10 @@ a{
 
 a:hover{
     color: rgb(5, 117, 168);
-    transition: color 0.4s;
 }
 
 svg:hover{
     color: rgb(5, 117, 168);
-    transition: color 0.4s;
 }
 
 .activeTab{
@@ -19,7 +17,7 @@ svg:hover{
     background-color: white;
     padding: 15px;
     border-radius: 8px;
-    transition: padding 0.2s;
+    transition: padding 0.4s;
 }
 
 .nav-link-txt{
