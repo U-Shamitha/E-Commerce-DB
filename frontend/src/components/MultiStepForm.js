@@ -8,6 +8,9 @@ import { faAddressBook, faBackward, faCheck, faCity, faClock, faCode, faDiagramN
 import { useDispatch } from 'react-redux';
 import { setIsSideBarOpen } from '../redux/filterOptionsSlice';
 import { fetchUser, setActiveTab } from '../redux/userSlice';
+import personalDetailsImg from '../images/personalDetailsImg.png';
+import addressImg from '../images/AddressImg.png';
+import paymentDetailsImg from '../images/paymentDetailsImg.png';
 
 // Component for Personal Details step
 const PersonalDetailsStep = ({ onNext, data, onChange }) => {
@@ -80,7 +83,8 @@ const PersonalDetailsStep = ({ onNext, data, onChange }) => {
       </div>
       <div>
         <center>
-          <img src='./personalDetailsImg.png'/>
+          {/* <img src='./personalDetailsImg.png'/> */}
+          <img src={personalDetailsImg}/>
         </center>
       </div>
     </div>
@@ -180,7 +184,8 @@ const AddressStep = ({ onNext, onPrev, data, onChange }) => {
     </div>
     <div>
       <center>
-        <img src='./AddressImg.png'/>
+        {/* <img src='./AddressImg.png'/> */}
+        <img src={addressImg}/>
       </center>
     </div>
     </div>
@@ -310,7 +315,8 @@ const PaymentDetailsStep = ({ onPrev, onSubmit, data, onChange }) => {
       </div>
       <div>
         <center>
-          <img src='./paymentDetailsImg.png'/>
+          {/* <img src='./paymentDetailsImg.png'/> */}
+          <img src={paymentDetailsImg}/>
         </center>
       </div>
     </div>

@@ -8,10 +8,6 @@ a:hover{
     color: rgb(5, 117, 168);
 }
 
-svg:hover{
-    color: rgb(5, 117, 168);
-}
-
 .activeTab{
     color: rgb(5, 117, 168);
     background-color: white;
@@ -24,4 +20,8 @@ svg:hover{
     height:100%;
     display:flex;
     align-items:center;
+}
+
+#menu-icon:hover{
+    color: rgb(5, 117, 168);
 }
