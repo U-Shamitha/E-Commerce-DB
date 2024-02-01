@@ -86,6 +86,11 @@ const ProductGrid = () => {
           if(typeof a[sortOption.value]  === 'string' &&  typeof b[sortOption.value]  === 'string') {
             return  a[sortOption.value].localeCompare(b[sortOption.value]);
           }
+          else if(sortOption.value==="price"){
+            const aDisPrice = a.price * (1 - a.discountPercentage / 100)
+            const bDisPrice = b.price * (1 - b.discountPercentage / 100)
+            return aDisPrice - bDisPrice
+          }
           else if(sortOption.value==="rating"){
             return b[sortOption.value] - a[sortOption.value]
           }
