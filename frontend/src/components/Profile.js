@@ -19,6 +19,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { primaryColor } from '../values/color';
 import { setActiveTab } from '../redux/userSlice';
+import profileImg from '../images/profileImg.png';
 
 const Profile = () => {
   const user = useSelector((state) => state.user.user);
@@ -51,7 +52,8 @@ const Profile = () => {
     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-around', height: '100%' }}>
       <div style={{ display: 'flex', width: '50%', alignItems: 'center', justifyContent:'center'}}>
         <center>
-          <img src="./profileImg.png" style={{ width: '100%' }} alt="Profile" />
+          {/* <img src="./profileImg.png" style={{ width: '100%' }} alt="Profile" /> */}
+          <img src={profileImg} alt="Profile" loading="eager" decoding="async"/>
         </center>
       </div>
       <div className="step-container" style={{ flex: 1}}>

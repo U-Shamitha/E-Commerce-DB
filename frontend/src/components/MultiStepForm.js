@@ -84,7 +84,7 @@ const PersonalDetailsStep = ({ onNext, data, onChange }) => {
       <div>
         <center>
           {/* <img src='./personalDetailsImg.png'/> */}
-          <img src={personalDetailsImg}/>
+          <img src={personalDetailsImg} loading="eager" decoding="async" alt="Personal Details"/>
         </center>
       </div>
     </div>
@@ -185,7 +185,7 @@ const AddressStep = ({ onNext, onPrev, data, onChange }) => {
     <div>
       <center>
         {/* <img src='./AddressImg.png'/> */}
-        <img src={addressImg}/>
+        <img src={addressImg} loading="eager" decoding="async" alt="Address"/>
       </center>
     </div>
     </div>
@@ -316,7 +316,7 @@ const PaymentDetailsStep = ({ onPrev, onSubmit, data, onChange }) => {
       <div>
         <center>
           {/* <img src='./paymentDetailsImg.png'/> */}
-          <img src={paymentDetailsImg}/>
+          <img src={paymentDetailsImg} loading="eager" decoding="async" alt="Payment Details"/>
         </center>
       </div>
     </div>
